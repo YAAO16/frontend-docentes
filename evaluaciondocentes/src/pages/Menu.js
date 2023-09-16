@@ -79,7 +79,7 @@ export default class Menu extends Component {
                   className="text-xl font-semibold flex items-center gap-4 text-slate-950 hover:text-slate-500 transition-colors py-2"
                   style={{ fontSize: '20px' }}
                 >
-                  Evaluacion1
+                  Evaluacion
                 </Link>
               </div>
               
