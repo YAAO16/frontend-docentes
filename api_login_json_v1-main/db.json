@@ -1,0 +1,34 @@
+{
+    "usuarios":[
+        {
+            "id":1,
+            "username":"admin",
+            "password":"21232f297a57a5a743894a0e4a801fc3",
+            "rol":"admin"
+        },
+        {
+            "id":2,
+            "username":"estudiante",
+            "password":"21232f297a57a5a743894a0e4a801fc3",
+            "rol":"estudiante"
+        },
+        {
+            "id":3,
+            "username":"docente",
+            "password":"21232f297a57a5a743894a0e4a801fc3",
+            "rol":"docente"
+        },
+        {
+            "id":4,
+            "username":"decano",
+            "password":"21232f297a57a5a743894a0e4a801fc3",
+            "rol":"decano"
+        },
+        {
+            "id":5,
+            "username":"administrativo",
+            "password":"21232f297a57a5a743894a0e4a801fc3",
+            "rol":"administrativo"
+        }
+    ]
+}
