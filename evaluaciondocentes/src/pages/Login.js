@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import '../css/Login.css';
-import loginImg from '../assets/login.jpg'
-import axios from 'axios';
-import md5 from 'md5';
+import { Link, useNavigate} from 'react-router-dom';
 import Cookies from 'universal-cookie';
-import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { loginUser } from '../api/api'; // Import the loginUser function
+import loginImg from '../assets/login.jpg';
+import '../css/Login.css';
 
-const baseUrl="http://localhost:3001/usuarios";
+const baseUrl = "http://localhost:3001/usuarios";
 const cookies = new Cookies();
 
 function Login() {
@@ -14,9 +13,10 @@ function Login() {
     username: '',
     password: '',
   });
-  const [esEstudiante, setEsEstudiante] = useState(false);
+  const navigate = useNavigate();
 
-  const handleChange = async (e) => {
+
+  const handleChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
@@ -24,31 +24,23 @@ function Login() {
   }
 
   const iniciarSesion = async () => {
-    await axios.get(baseUrl, { params: { username: form.username, password: md5(form.password) } })
-      .then((response) => {
-        return response.data;
-      })
+    try {
+      const user = await loginUser(form.username, form.password);
 
-      .then((response) => {
-        if (response.length > 0) {
-          var respuesta = response[0];
-          cookies.set('id', respuesta.id, { path: '/' });
-          cookies.set('username', respuesta.username, { path: '/' });
-          cookies.set('rol', respuesta.rol, { path: '/' });
-          alert(`Bienvenido ${respuesta.username}`);
-          window.location.href = "./menu";
+      if (user) {
+        cookies.set('id', user.id, { path: '/' });
+        cookies.set('username', user.username, { path: '/' });
+        cookies.set('rol', user.rol, { path: '/' });
+        alert(`Bienvenido ${user.username}`);
 
-          // Validar si el rol es "estudiante" y actualizar el estado
-          if (respuesta.username === 'estudiante') {
-            setEsEstudiante(true);
-          }
-        } else {
-          alert("El usuario o la contraseña no son correctos");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+        navigate("/menu");
+      } else {
+        alert("El usuario o la contraseña no son correctos");
+      }
+    } catch (error) {
+      console.error(error);
+      // Handle errors gracefully, e.g., show an error message to the user
+    }
   }
 
   return (
@@ -71,13 +63,6 @@ function Login() {
             <p><input type="checkbox" />Recordar mi Usuario</p>
             <p>Recordar Contraseña</p>
           </div>
-
-          {/* Mostrar el enlace de Evaluacion solo si es un estudiante */}
-          {esEstudiante && (
-            <div className='flex flex-col text-gray-400 py-2'>
-              <Link to="/Evaluacion" className='text-blue-500 hover:underline hover:text-blue-600'>Ir a Evaluacion</Link>
-            </div>
-          )}
 
           <button className='w-full my-5 py-2 bg-teal-500 shadow-lg shadow-teak-500/50 hover:shadow-teal-500/40 text-white font-semibold rounded-lg' onClick={() => iniciarSesion()}>Iniciar Sesión</button>
         </form>
