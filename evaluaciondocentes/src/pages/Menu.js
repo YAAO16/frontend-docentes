@@ -20,7 +20,7 @@ function MenuItem({ to, text, icon, onClick }) {
   );
 }
 
-function DropdownMenu({ title, options }) {
+/*function DropdownMenu({ title, options }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -48,14 +48,46 @@ function DropdownMenu({ title, options }) {
       )}
     </div>
   );
+}*/
+
+function DropdownMenu({ title, options }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="relative inline-block text-left-green-500">
+      <Button
+        variant="primary"
+        style={{ color: 'black', fontSize: '20px' }}
+        className="text-xl font-semibold flex items-center gap-4 text-slate-950 hover:text-slate-500 transition-colors py-2 relative"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <FcList className="orden" style={{ marginRight: '10px' }} />
+        {title}
+      </Button>
+      {isOpen && (
+        <Dropdown className="left right-0 mt-2 w-48 rounded-md shadow-lg">
+          {options.map((option) => (
+            <Dropdown.Item
+              key={option.href}
+              href={option.href}
+              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+            >
+              {option.text}
+            </Dropdown.Item>
+          ))}
+        </Dropdown>
+      )}
+    </div>
+  );
 }
+
 
 function generateMenu(role, onClick) {
   const menuItems = [
     {
       text: 'Evaluación',
       to: '/Evaluacion',
-      icon: <FcList />,
+      /*icon: <FcList />,*/
     },
     {
       title: 'Reporte',
@@ -105,7 +137,9 @@ function generateMenu(role, onClick) {
 
   if (role === 'estudiante') {
     return [menuItems[0]];
-  } else if (role === 'admin') {
+  } else if (role === 'docente') {
+    return [menuItems[0], menuItems[1]];
+  }else if (role === 'admin'|| role=== 'decano' || role==='administrativo') {
     return menuItems;
   }
 
@@ -155,10 +189,10 @@ function Menu() {
           <div>
             <h1
               className="text-xl font-semibold flex items-center gap-4 text-slate-950 hover:text-slate-500 transition-colors py-2"
-              style={{ fontSize: '35px' }}
+              style={{ fontSize: '25px' }}
             >
               <FcBusinessman />
-              <Link to="/Home">{rol}</Link>
+              <Link to="/menu">{rol}</Link>
             </h1>
             {menuItems.map((item, index) => {
               if (item.options) {
