@@ -1,6 +1,6 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes, createBrowserRouter} from 'react-router-dom';
-
+import Evaluacion from "../pages/Evaluacion/Evaluacion";
 import Login from "../pages/Login";
 import Menu from "../pages/Menu";
 
@@ -13,6 +13,10 @@ const MyRoutes= createBrowserRouter([
   {
     path: "/menu",
     element: <Menu></Menu>
+  },
+  {
+    path: "/Evaluacion",
+    element: <Evaluacion></Evaluacion>
   }
 ]);
 
