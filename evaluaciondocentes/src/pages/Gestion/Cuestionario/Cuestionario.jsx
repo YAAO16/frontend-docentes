@@ -95,7 +95,7 @@ function Cuestionario() {
     const [open, setOpen] = useState(false)
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100%' }} className="body">
-          <Link to="/Home" class="botoncue"><FcDownLeft className="icon"/></Link>
+          <Link to="/menu" class="botoncue"><FcDownLeft className="icon"/></Link>
         <div style={{ width: '80%' }} className="form">
           <center>
             <div className='w-full max-w-5xl'>

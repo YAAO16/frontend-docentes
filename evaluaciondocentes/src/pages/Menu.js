@@ -117,7 +117,9 @@ function generateMenu(role, onClick) {
     {
       title: 'Gestion',
       options: [
-        { href: '/cuestionario', text: 'Cuestionario' },
+        { href: '/cuestionario',
+         text: 'Cuestionario' 
+        },
         {
           href: '/informecuestionario',
           text: 'Informe Cuestionario',
@@ -126,7 +128,9 @@ function generateMenu(role, onClick) {
           href: '/categoriapregunta',
           text: 'Categoria de preguntas',
         },
-        { href: '/basepregunta', text: 'Base de preguntas' },
+        { href: '/basepregunta',
+         text: 'Base de preguntas'
+        },
         {
           href: '/grupopersona',
           text: 'Grupo de Personas',

@@ -95,7 +95,7 @@ function Categoriapregunta() {
     const [open, setOpen] = useState(false)
     return (
         <div className="body" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', width: '100%' }}>
-          <Link to="/Home" class="botoncat"><FcDownLeft className="icon"/></Link>
+          <Link to="/menu" class="botoncat"><FcDownLeft className="icon"/></Link>
         <div style={{ width: '80%' }}>
           <center>
             <div className='w-full max-w-5xl'>

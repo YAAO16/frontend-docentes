@@ -7,6 +7,11 @@ import Informedocentes from '../pages/Reportes/Informesdocentes/Informesdocentes
 import Resultadodocentes from '../pages/Reportes/Resultadodocentes/Resultadodocentes.jsx';
 import Evaluaron from '../pages/Informesdirectivos/Evaluaron/Evaluaron.jsx';
 import Informeresultadoscuantitativos from '../pages/Informesdirectivos/Informeresultadoscuantitativos/Informeresultadocuantitativos.jsx';
+import Cuestionario from "../pages/Gestion/Cuestionario/Cuestionario.jsx";
+import Informecuestionario from "../pages/Gestion/Informecuestionario/Informecuestionario.jsx";
+import Basepregunta from "../pages/Gestion/Basepregunta/Basepregunta.jsx";
+import Categoriapregunta from  "../pages/Gestion/Categoriapregunta/Categoriapregunta.jsx";
+import Grupopersona from "../pages/Gestion/Grupopersona/Grupopersona.jsx"
 
 const MyRoutes= createBrowserRouter([
   {
@@ -37,6 +42,26 @@ const MyRoutes= createBrowserRouter([
     path: "/infomeresultadoscuantitativos",
     element: <Informeresultadoscuantitativos></Informeresultadoscuantitativos>
   },
+  {
+    path: "/cuestionario",
+    element: <Cuestionario></Cuestionario>
+  },
+  {
+    path: "/informecuestionario",
+    element: <Informecuestionario></Informecuestionario>
+  }, 
+  {
+    path: "/categoriapregunta",
+    element: <Categoriapregunta></Categoriapregunta>
+  },
+  {
+    path: "/basepregunta",
+    element: <Basepregunta></Basepregunta>
+  },
+  {
+    path: "/grupopersona",
+    element: <Grupopersona></Grupopersona>
+  }
 ]);
 
     // <Router>
