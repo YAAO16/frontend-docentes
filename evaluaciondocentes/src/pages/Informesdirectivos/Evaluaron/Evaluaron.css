@@ -1,0 +1,19 @@
+.line-break {
+    margin-bottom: 30px; 
+  }
+  
+  .body {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      width: 100%;
+  }
+
+  .container {
+    display: flex;
+  }
+  
+  .item {
+    margin-right: 200px;
+  }
