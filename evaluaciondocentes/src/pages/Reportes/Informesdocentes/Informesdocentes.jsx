@@ -48,13 +48,13 @@ function Informedocentes() {
                       {mostrarOpciones && (
                       <Dropdown className="left right-0 mt-2 w-48 rounded-md shadow-lg" style={{ width: '100%'}}>
                           <Dropdown.Item href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-gray-900">
-                          Opcion 1
+                          Evaluación del Desempeño del Estudiante
                           </Dropdown.Item>
                           <Dropdown.Item href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-gray-900">
-                          Opcion 2
+                          Evaluación Docente
                           </Dropdown.Item>
                           <Dropdown.Item href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-green-100 hover:text-gray-900">
-                          Opcion 3
+                          Evaluación Institucional
                           </Dropdown.Item>
                       </Dropdown>
                       )}

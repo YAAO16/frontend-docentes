@@ -193,7 +193,7 @@ function Evaluacion() {
                           </thead>
                           <tbody>
                           <tr>
-                              <td style={styles.cell}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                              <td style={styles.cell}>¿Cómo calificarías la habilidad del docente para explicar y enseñar el contenido de la materia?</td>
                               <td style={styles.cell}><input type="radio" name="option1" checked={selectedOptions[0] === 0} onChange={() => handleOptionChange(0, 0)}/></td>
                               <td style={styles.cell}><input type="radio" name="option2" checked={selectedOptions[0] === 1} onChange={() => handleOptionChange(0, 1)}/></td>
                               <td style={styles.cell}><input type="radio" name="option3" checked={selectedOptions[0] === 2} onChange={() => handleOptionChange(0, 2)}/></td>
@@ -201,7 +201,7 @@ function Evaluacion() {
                               <td style={styles.cell}><input type="radio" name="option5"checked={selectedOptions[0] === 4}onChange={() => handleOptionChange(0, 4)}/></td>
                           </tr>
                           <tr>
-                              <td style={styles.cell}> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                              <td style={styles.cell}> ¿Qué tan efectivas consideras las estrategias de enseñanza utilizadas por el docente?</td>
                               <td style={styles.cell}><input type="radio" value="1" name="option1" checked={selectedOptions[1] === 0}onChange={() => handleOptionChange(1, 0)}/></td>
                               <td style={styles.cell}><input type="radio" name="option2" checked={selectedOptions[1] === 1}onChange={() => handleOptionChange(1, 1)}/></td>
                               <td style={styles.cell}><input type="radio" name="option3" checked={selectedOptions[1] === 2} onChange={() => handleOptionChange(1, 2)}/></td>
@@ -209,7 +209,7 @@ function Evaluacion() {
                               <td style={styles.cell}><input type="radio" name="option5" checked={selectedOptions[1] === 4} onChange={() => handleOptionChange(1, 4)}/></td>
                           </tr>
                           <tr>
-                              <td style={styles.cell}> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+                              <td style={styles.cell}> ¿Cómo describirías la relación del docente con los estudiantes?</td>
                               <td style={styles.cell}><input type="radio" name="option1" checked={selectedOptions[2] === 0} onChange={() => handleOptionChange(2, 0)}/></td>
                               <td style={styles.cell}><input type="radio" name="option2" checked={selectedOptions[2] === 1} onChange={() => handleOptionChange(2, 1)}/></td>
                               <td style={styles.cell}><input type="radio" name="option3" checked={selectedOptions[2] === 2} onChange={() => handleOptionChange(2, 2)}/></td>
